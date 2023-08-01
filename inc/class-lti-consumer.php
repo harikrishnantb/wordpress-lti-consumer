@@ -202,6 +202,7 @@ class LTI_Consumer {
      */
     private static function find_tool( $url ) {
         $tools = get_option( 'classcube-lti-tools', [] );
+        $url =  str_ireplace('amp;', '', $url);
 
         if ( !empty( $tools ) ) {
             foreach ( $tools as $tool ) {
